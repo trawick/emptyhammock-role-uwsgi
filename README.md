@@ -1,4 +1,4 @@
-# emptyhammock-role-application
+# emptyhammock-role-uwsgi
 
 This is an Ansible role that, in conjunction with a number of other Emptyhammock
 roles, handles provisioning and deployment of Django applications.
