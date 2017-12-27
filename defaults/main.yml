@@ -1,0 +1,3 @@
+---
+use_huey: "yes"
+uwsgi_cfg_dir: /etc/uwsgi-config

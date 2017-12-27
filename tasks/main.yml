@@ -1,0 +1,26 @@
+---
+- name: Create uWSGI config directory
+  file: >
+      dest={{ uwsgi_cfg_dir }}
+      mode=755
+      owner=root
+      group=root
+      state=directory
+
+- name: Add application uWSGI config
+  template: src=uwsgi-ini.j2
+            dest={{ uwsgi_cfg_dir }}/{{ project_name }}.ini
+  notify: restart application
+
+- name: Add application init script
+  template: src=init-script.j2
+            dest=/etc/init.d/{{ project_name }}-app
+            mode=0751
+  notify: restart application
+
+- name: Configure run-levels for application
+  command: update-rc.d {{ project_name }}-app defaults
+  notify: restart application
+
+- name: Run application
+  action: service name={{ project_name }}-app state=started

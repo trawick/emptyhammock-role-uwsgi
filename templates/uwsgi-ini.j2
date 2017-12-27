@@ -1,0 +1,17 @@
+[uwsgi]
+pidfile = {{ log_dir }}/{{ project_name }}.pid
+logger = syslog:{{ project_name }}
+daemonize = {{ log_dir }}/{{ project_name }}.log
+scgi-socket = 127.0.0.1:{{ application_port }}
+chdir = {{ source_dir }}
+module = {{ project_name }}.wsgi
+master = true
+processes = 1
+threads = 2
+uid = {{ project_user }}
+gid = {{ project_user }}
+virtualenv = {{ virtualenv_dir }}
+buffer-size = 8192
+{% if use_huey == "yes" %}
+attach-daemon2 = cmd=./manage.py run_huey --logfile={{ log_dir }}/huey.log,chdir={{ source_dir }},stopsignal=15
+{% endif %}
