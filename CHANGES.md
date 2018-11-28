@@ -5,7 +5,7 @@
 *Note: When upgrading from 0.0.2 or earlier to 0.0.4, test startup after reboot
 and deploying with/without uWSGI running at the time.  The init script changes
 might be ineffective for intervals due to caching by systemd.  Running
-`sudo systemctl daemon-reload` should help.*
+`sudo systemctl daemon-reload` might help, but rebooting may be necessary.*
 
 * Simplify enabling/starting uWSGI.  (Switch a command-line invocation to the
   appropriate Ansible module(.
