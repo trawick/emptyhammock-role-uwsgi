@@ -18,9 +18,5 @@
             mode=0751
   notify: restart application
 
-- name: Configure run-levels for application
-  command: update-rc.d {{ project_name }}-app defaults
-  notify: restart application
-
-- name: Run application
-  action: service name={{ project_name }}-app state=started
+- name: Run application now and at startup
+  action: service name={{ project_name }}-app state=started enabled=yes
