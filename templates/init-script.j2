@@ -1,5 +1,16 @@
 #!/bin/sh
 
+### BEGIN INIT INFO
+# Provides:          {{ project_name }}-app
+# Required-Start:    $remote_fs $network $syslog
+# Required-Stop:     $remote_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# X-Interactive:     false
+# Short-Description: Start {{ project_name }}-app
+# Description:       Start {{ project_name }}-app
+### END INIT INFO
+
 SERVICE_NAME={{ project_name }}-app
 PIDFILE={{ log_dir }}/{{ project_name }}.pid
 UWSGI_INI={{ uwsgi_cfg_dir }}/{{ project_name }}.ini
