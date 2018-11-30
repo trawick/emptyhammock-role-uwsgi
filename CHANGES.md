@@ -8,7 +8,7 @@ might be ineffective for intervals due to caching by systemd.  Running
 `sudo systemctl daemon-reload` might help, but rebooting may be necessary.*
 
 * Simplify enabling/starting uWSGI.  (Switch a command-line invocation to the
-  appropriate Ansible module(.
+  appropriate Ansible module).
 
 ## Version 0.0.3
 
