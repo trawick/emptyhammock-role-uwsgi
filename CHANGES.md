@@ -1,5 +1,9 @@
 # Changes and migration requirements
 
+## Version 0.0.5
+
+* Allow overriding threads/processes without overriding the entire `uwsgi-ini.j2`
+  template.
 ## Version 0.0.4
 
 *Note: When upgrading from 0.0.2 or earlier to 0.0.4, test startup after reboot

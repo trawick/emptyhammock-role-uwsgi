@@ -1,3 +1,5 @@
 ---
 use_huey: "yes"
 uwsgi_cfg_dir: /etc/uwsgi-config
+app_processes: 1
+threads_per_app_process: 2
