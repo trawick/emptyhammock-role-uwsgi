@@ -3,7 +3,9 @@
 ## Version 0.0.5
 
 * Allow overriding threads/processes without overriding the entire `uwsgi-ini.j2`
-  template.
+  template.  `Set app_processes` and/or `threads_per_app_process` to the desired
+  values.
+
 ## Version 0.0.4
 
 *Note: When upgrading from 0.0.2 or earlier to 0.0.4, test startup after reboot
